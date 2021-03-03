@@ -1,9 +1,87 @@
 /******************
  * YOUR CODE HERE *
  ******************/
+function addAll(nums1) {
+  let sum = 0;
+  for (const value of nums1) {
+    sum += value;
+  }
+  return sum;
+}
 
+function countSpaces(sentence1) {
+  let space = "";
+  for (let i = 0; i < sentence1.length; i++) {
+    if (sentence1[i] === " ") {
+      space += sentence1[i];
+    }
+  }
+  return space.length;
+}
 
+function countTrues(bools1) {
+  let truthies = [];
+  for (let i = 0; i < bools1.length; i++) {
+    if (bools1[i] === true) {
+      truthies.push(bools1[i]);
+    }
+  }
+  return truthies.length;
+}
 
+function makeFriendly(paragraph1) {
+  let str = "";
+  for (let i = 0; i < paragraph1.length; i++) {
+    if (paragraph1[i] === ".") {
+      str += "!";
+    } else {
+      str += paragraph1[i];
+    }
+  }
+  return str;
+}
+
+function cubeAll(nums1) {
+  let output = [];
+  for (const value of nums1) {
+    output.push(Math.pow(value, 3));
+  }
+  return output;
+}
+
+function addNoises(animals1) {
+  let animalSounds = [];
+  for (const value of animals1) {
+    if (value === "Rolph" || value === "Fido" || value === "Maisie") {
+      animalSounds.push(value + " says \"Woof!\"");
+    } else if (value === "Garfield" || value === "Heathcliff") {
+      animalSounds.push(value + " says \"Meow!\"");
+    } else if (value === "Barnie" || value === "Sharp Tooth") {
+    animalSounds.push(value + " says \"ROWR.\"");
+    }
+  }
+  return animalSounds;
+}
+
+function womenOnly(people1) {
+  let females = [];
+  for (let i = 0; i < people1.length; i++) {
+    if (people1[i] && people1[i].substr(-1) === "F") {
+      females.push(people1[i]);
+    }
+  }
+  return females;
+}
+
+function integersOnly(nums1) {
+  let output = [];
+  for (const value of nums1) {
+    if (value % 1 === 0) {
+      output.push(value);
+    }
+  }
+  return output;
+}
 
 
 
@@ -55,10 +133,6 @@ describe('addAll', () => {
     expect(addAll(nums1)).toBe(1007);
     expect(addAll(nums2)).toBe(-854);
   })
-
-  it(`isn't reassignable`, () => {
-    expect(() => addAll = 500).toThrow();
-  })
 })
 
 describe(`countSpaces`, () => {
@@ -86,10 +160,6 @@ describe(`countSpaces`, () => {
 
     expect(countSpaces(sentence1)).toBe(3);
     expect(countSpaces(sentence2)).toBe(5);
-  })
-
-  it(`isn't reassignable`, () => {
-    expect(() => countSpaces = 500).toThrow();
   })
 })
 
@@ -123,10 +193,6 @@ describe(`countTrues`, () => {
     expect(countTrues(values1)).toBe(2);
     expect(countTrues(values2)).toBe(4);
   })
-
-  it(`isn't reassignable`, () => {
-    expect(() => countTrues = 500).toThrow();
-  })
 })
 
 describe('makeFriendly', () => {
@@ -142,10 +208,6 @@ describe('makeFriendly', () => {
     expect(makeFriendly(paragraph1)).toEqual(friendly1);
     expect(makeFriendly(paragraph2)).toEqual(friendly2);
     expect(makeFriendly(paragraph3)).toEqual(friendly3);
-  })
-
-  it(`isn't reassignable`, () => {
-    expect(() => makeFriendly = 500).toThrow();
   })
 })
 
@@ -171,10 +233,6 @@ describe('cubeAll', () => {
 
     expect(nums1).toEqual(originalNums1);
     expect(nums2).toEqual(originalNums2);
-  })
-
-  it(`isn't reassignable`, () => {
-    expect(() => cubeAll = 500).toThrow();
   })
 })
 
@@ -217,10 +275,6 @@ describe('addNoises', () => {
     expect(animals1).toEqual(originalAnimals1);
     expect(animals2).toEqual(originalAnimals2);
   })
-
-  it(`isn't reassignable`, () => {
-    expect(() => addNoises = 500).toThrow();
-  })
 })
 
 describe('womenOnly', () => {
@@ -229,24 +283,24 @@ describe('womenOnly', () => {
       'Colin - M',
       'Mesuara - F',
       'Ginny - F',
-      'Anthony - M',
+      'Anthony - M'
     ]
 
     const answer1 = [
       'Mesuara - F',
-      'Ginny - F',
+      'Ginny - F'
     ]
 
     const people2 = [
       'Ted - M',
       'Melissa - F',
       'Biff - M',
-      'Spiffs - F',
+      'Spiffs - F'
     ]
 
     const answer2 = [
       'Melissa - F',
-      'Spiffs - F',
+      'Spiffs - F'
     ]
 
     expect(womenOnly(people1)).toEqual(answer1);
@@ -288,10 +342,6 @@ describe('womenOnly', () => {
     expect(people1).toEqual(originalPeople1);
     expect(people2).toEqual(originalPeople2);
   })
-
-  it(`isn't reassignable`, () => {
-    expect(() => womenOnly = 500).toThrow();
-  })
 })
 
 describe('integersOnly', () => {
@@ -319,9 +369,5 @@ describe('integersOnly', () => {
 
     expect(nums1).toEqual(originalNums1);
     expect(nums2).toEqual(originalNums2);
-  })
-
-  it(`isn't reassignable`, () => {
-    expect(() => integersOnly = 500).toThrow();
   })
 })

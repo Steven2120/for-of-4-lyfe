@@ -66,7 +66,7 @@ function addNoises(animals1) {
 function womenOnly(people1) {
   let females = [];
   for (let i = 0; i < people1.length; i++) {
-    if (people1[i] && people1[i].substr(-1) === "F") {
+    if (people1[i].substr(-1, 1) === "F") {
       females.push(people1[i]);
     }
   }
